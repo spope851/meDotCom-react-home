@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { TwitterFeed } from './twitter-feed';
+import { WhatsNew } from './whats-new';
 
-const root = ReactDOM.createRoot(document.getElementById('twitter-feed-wrapper'));
-root.render(
+const whatsNewRoot = ReactDOM.createRoot(document.getElementById('whats-new'));
+whatsNewRoot.render(
+  <React.StrictMode>
+    <WhatsNew endpoint={'api/getContent'} />
+  </React.StrictMode>
+);
+
+const twitterFeedRoot = ReactDOM.createRoot(document.getElementById('twitter-feed-wrapper'));
+twitterFeedRoot.render(
   <React.StrictMode>
     <TwitterFeed />
   </React.StrictMode>
