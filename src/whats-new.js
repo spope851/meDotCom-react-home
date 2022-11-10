@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react"
 export const WhatsNew = ({ endpoint }) => {
-    const [content, setContent] = useState() // {"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"} }
+    const [content, setContent] = useState() //{"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"}) // {"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"} }
 
     useEffect(() => {
         (async () => {
-            await fetch(endpoint).then(res => setContent(res.json()))
+            await fetch(endpoint).then(res => res.json().then(data => setContent(data)))
         })()
     }, [])
 
