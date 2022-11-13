@@ -12,7 +12,13 @@ export const WhatsNew = ({ endpoint }) => {
         ? (
             <div
                 id="link-preview"
-                style={{ display: 'flex', border: 'solid #aaa', borderRadius: '15px' }}
+                style={{
+                    display: 'flex',
+                    border: 'solid #aaa',
+                    borderRadius: '15px',
+                    alignItems: 'stretch',
+                    flex: 1
+                }}
                 onClick={() => window.open(content.domain, '_blank').focus()}
                 onMouseOver={() => document.getElementById(`link-preview`).classList.add('tweet-hover')}
                 onMouseLeave={() => document.getElementById(`link-preview`).classList.remove('tweet-hover')}
