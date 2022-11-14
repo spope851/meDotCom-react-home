@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 export const WhatsNew = ({ endpoint }) => {
-    const [content, setContent] = useState() //{"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"}) // {"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"} }
+    const [content, setContent] = useState({"id":3,"title":"How to be happy","img":null,"domain":"https://introspective20s.wordpress.com/2022/04/09/how-to-be-happy/","summary":"A framework for maintaining enjoyment and satisfaction"}) //{"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"}) // {"id":1,"title":"big title","img":"https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/34/83/34-83-101P/Stay-Cool-Balazs-Solti-Poster.jpg","domain":"https://google.com","summary":"sick"} }
 
     useEffect(() => {
         (async () => {
@@ -17,14 +17,21 @@ export const WhatsNew = ({ endpoint }) => {
                     border: 'solid #aaa',
                     borderRadius: '15px',
                     alignItems: 'stretch',
-                    flex: 1
+                    flex: '1 1 0px',
                 }}
                 onClick={() => window.open(content.domain, '_blank').focus()}
                 onMouseOver={() => document.getElementById(`link-preview`).classList.add('tweet-hover')}
                 onMouseLeave={() => document.getElementById(`link-preview`).classList.remove('tweet-hover')}
             >
                 <img style={{ objectFit: 'cover', borderRadius: '15px 0 0 15px', minWidth: 100 }} src={content.img || '/assets/favicon.ico'} alt="image" />
-                <div style={{ padding: '20px 5px', textAlign: 'left', maxWidth: 300 }}>
+                <div style={{
+                        padding: '20px 5px',
+                        textAlign: 'left',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        flex: '1 1 0px',
+                        width: 0,
+                    }}>
                     <strong
                         style={{
                             margin: 0
