@@ -84,7 +84,7 @@ export class TwitterFeed extends React.Component {
                             <p>{text}</p>
                             {entities}
                             {extendedEntities}
-                            <span>{`❤ ${favorites > 0 ? favorites : ''}`}</span>
+                            <span>{`♡ ${favorites > 0 ? favorites : ''}`}</span>
                             {infoLink}
                         </div>
                 )})}
