@@ -7,14 +7,15 @@ import './index.css'
 const whatsNewRoot = ReactDOM.createRoot(document.getElementById('whats-new'));
 whatsNewRoot.render(
   <React.StrictMode>
-    <div id='wrapper'>
+    {/* <div id='wrapper'>
       <div id='left-wrapper'>
         <WhatsNew endpoint={'api/getContent'} />
-      </div>
-      <div id='left-wrapper'>
+        </div>
+        <div id='left-wrapper'>
         <div id='other-child'>something</div>
-      </div>
-    </div>
+        </div>
+      </div> */}
+      <WhatsNew endpoint={'api/getContent'} />
   </React.StrictMode>
 );
 
