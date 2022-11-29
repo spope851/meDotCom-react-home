@@ -43,10 +43,10 @@ export const TwitterFeed = () => {
                     : tweet.created_at
                 const entities = rt
                     ? tweet.retweeted_status.entities && tweet.retweeted_status.entities.urls.map(entity => (
-                        <p key={entity.url}><a href={entity.url} style={{ overflowWrap: 'break-word' }}>{entity.display_url}</a></p>
+                        <span key={entity.url}><a href={entity.url} style={{ overflowWrap: 'break-word' }}>{entity.display_url}</a></span>
                     ))
                     : tweet.entities && tweet.entities.urls.map(entity => (
-                        <p key={entity.url}><a href={entity.url} style={{ overflowWrap: 'break-word' }}>{entity.display_url}</a></p>
+                        <span key={entity.url}><a href={entity.url} style={{ overflowWrap: 'break-word' }}>{entity.display_url}</a></span>
                     ))
                 const extendedEntities = rt
                     ? tweet.retweeted_status.extended_entities && tweet.retweeted_status.extended_entities.media.map((entity, _idx, arr) => (
@@ -76,7 +76,7 @@ export const TwitterFeed = () => {
                         {rt && <p style={{ margin: '0 0 10px 0' }}><img src="/assets/images/retweet.png" width={15} alt="retweet" />{`${tweet.user.name} retweeted`}</p>}
                         <img src={profileImg} alt="profile" style={{ borderRadius: '25px' }} />
                         <span><strong>{name}</strong>{` @${screenName} - ${new Date(created).toLocaleDateString()}`}</span>
-                        <p>{text.map((line, idx) => <span>{`${line || ''} ${entities[idx] || ''} `}</span>)}</p>
+                        <p>{text.map((line, idx) => <span>{`${line || ''} `}{entities[idx] || ''}</span>)}</p>
                         {extendedEntities}
                         <span>{`♡ ${favorites > 0 ? favorites : ''}`}</span>
                         {infoLink}
