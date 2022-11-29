@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+// import data from "../data/tweets.json"
 export const TwitterFeed = () => {
     const [tweets, setTweets] = useState([])
     const [count, setCount] = useState(10)
@@ -22,8 +23,8 @@ export const TwitterFeed = () => {
             {tweets.map(tweet => {
                 const rt = !!tweet.retweeted_status
                 const text = rt
-                    ? tweet.retweeted_status.full_text.split(/https.*/i)
-                    : tweet.full_text.split(/https.*/i)
+                    ? tweet.retweeted_status.full_text.split(/https:\/\/t.co\/[-a-zA-Z0-9]\w*/i)
+                    : tweet.full_text.split(/https:\/\/t.co\/[-a-zA-Z0-9]\w*/i)
                 const tweetImg = <img src="/assets/images/tweet.svg" style={{ float: 'right' }} alt="tweet" />
                 const infoLink = 
                     <a target="_blank" rel="noreferrer" style={{ float: 'right' }} href="https://help.twitter.com/en/twitter-for-websites-ads-info-and-privacy?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3As_pop3%7Ctwcon%5Es1">
