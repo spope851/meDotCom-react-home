@@ -23,7 +23,7 @@ export const WhatsNew = ({ endpoint }) => {
                 onMouseOver={() => document.getElementById(`link-preview`).classList.add('tweet-hover')}
                 onMouseLeave={() => document.getElementById(`link-preview`).classList.remove('tweet-hover')}
             >
-                <img style={{ objectFit: 'cover', borderRadius: '15px 0 0 15px', minWidth: 100 }} src={content.img || '/assets/favicon.ico'} alt="image" />
+                <img style={{ objectFit: 'cover', borderRadius: '15px 0 0 15px', width: 100 }} src={content.img || '/assets/favicon.ico'} alt="image" />
                 <div style={{
                         padding: '20px 5px',
                         textAlign: 'left',
